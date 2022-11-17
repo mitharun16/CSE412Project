@@ -6,62 +6,6 @@
 
 
 
-DROP TABLE IF EXISTS races CASCADE;
-CREATE TABLE races (
-  raceId integer ,
-  year integer NOT NULL DEFAULT '0',
-  round integer NOT NULL DEFAULT '0',
-  circuitId integer NOT NULL DEFAULT '0',
-  name varchar(255) NOT NULL DEFAULT '',
-  date date NOT NULL DEFAULT '0001-01-01',
-  time time DEFAULT NULL,
-  url varchar(255) DEFAULT NULL,
-  fp1_date date DEFAULT NULL,
-  fp1_time time DEFAULT NULL,
-  fp2_date date DEFAULT NULL,
-  fp2_time time DEFAULT NULL,
-  fp3_date date DEFAULT NULL,
-  fp3_time time DEFAULT NULL,
-  quali_date date DEFAULT NULL,
-  quali_time time DEFAULT NULL,
-  sprinteger_date date DEFAULT NULL,
-  sprinteger_time time DEFAULT NULL,
-  PRIMARY KEY (raceId),
-  FOREIGN KEY (circuitId) REFERENCES tracks(circuitId)
-);
-
---
--- Table structure for table results
---
-
-DROP TABLE IF EXISTS results CASCADE;
-CREATE TABLE results (
-  resultId integer,
-  raceId integer NOT NULL DEFAULT '0',
-  driverId integer NOT NULL DEFAULT '0',
-  sponsorId integer NOT NULL DEFAULT '0',
-  number integer DEFAULT NULL,
-  grid integer NOT NULL DEFAULT '0',
-  position integer DEFAULT NULL,
-  positionText varchar(255) NOT NULL DEFAULT '',
-  positionOrder integer NOT NULL DEFAULT '0',
-  pointegers float NOT NULL DEFAULT '0',
-  laps integer NOT NULL DEFAULT '0',
-  time varchar(255) DEFAULT NULL,
-  milliseconds integer DEFAULT NULL,
-  fastestLap integer DEFAULT NULL,
-  rank integer DEFAULT '0',
-  fastestLapTime varchar(255) DEFAULT NULL,
-  fastestLapSpeed varchar(255) DEFAULT NULL,
-  statusId integer NOT NULL DEFAULT '0',
-  PRIMARY KEY (resultId),
-  FOREIGN KEY (raceId) REFERENCES races(raceId),
-  FOREIGN KEY (driverId) REFERENCES drivers(driverId),
-  FOREIGN KEY (sponsorId) REFERENCES sponsors(sponsorId)
-);
-
-
-
 DROP TABLE IF EXISTS tracks CASCADE;
 CREATE TABLE tracks (
   circuitId integer,
@@ -106,6 +50,59 @@ CREATE TABLE drivers (
   nationality varchar(255) DEFAULT NULL,
   url varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (driverId)
+);
+
+
+DROP TABLE IF EXISTS races CASCADE;
+CREATE TABLE races (
+  raceId integer ,
+  year integer NOT NULL DEFAULT '0',
+  round integer NOT NULL DEFAULT '0',
+  circuitId integer NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  date date NOT NULL DEFAULT '0001-01-01',
+  time time DEFAULT NULL,
+  url varchar(255) DEFAULT NULL,
+  fp1_date date DEFAULT NULL,
+  fp1_time time DEFAULT NULL,
+  fp2_date date DEFAULT NULL,
+  fp2_time time DEFAULT NULL,
+  fp3_date date DEFAULT NULL,
+  fp3_time time DEFAULT NULL,
+  quali_date date DEFAULT NULL,
+  quali_time time DEFAULT NULL,
+  sprinteger_date date DEFAULT NULL,
+  sprinteger_time time DEFAULT NULL,
+  PRIMARY KEY (raceId),
+  FOREIGN KEY (circuitId) REFERENCES tracks(circuitId)
+);
+
+
+
+DROP TABLE IF EXISTS results CASCADE;
+CREATE TABLE results (
+  resultId integer,
+  raceId integer NOT NULL DEFAULT '0',
+  driverId integer NOT NULL DEFAULT '0',
+  sponsorId integer NOT NULL DEFAULT '0',
+  number integer DEFAULT NULL,
+  grid integer NOT NULL DEFAULT '0',
+  position integer DEFAULT NULL,
+  positionText varchar(255) NOT NULL DEFAULT '',
+  positionOrder integer NOT NULL DEFAULT '0',
+  pointegers float NOT NULL DEFAULT '0',
+  laps integer NOT NULL DEFAULT '0',
+  time varchar(255) DEFAULT NULL,
+  milliseconds integer DEFAULT NULL,
+  fastestLap integer DEFAULT NULL,
+  rank integer DEFAULT '0',
+  fastestLapTime varchar(255) DEFAULT NULL,
+  fastestLapSpeed varchar(255) DEFAULT NULL,
+  statusId integer NOT NULL DEFAULT '0',
+  PRIMARY KEY (resultId),
+  FOREIGN KEY (raceId) REFERENCES races(raceId),
+  FOREIGN KEY (driverId) REFERENCES drivers(driverId),
+  FOREIGN KEY (sponsorId) REFERENCES sponsors(sponsorId)
 );
 
 
