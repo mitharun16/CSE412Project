@@ -1,5 +1,8 @@
-initdb -D .\Database\F1Data
-pg_ctl -D .\Database\F1Data\ -l logfile start
+initdb -D Database
+pg_ctl -D Database -l logfile start 
 createuser --superuser postgres
-node index.js
-pg_ctl -D .\Database\F1Data\ stop
+psql -d postgres -a -f CreateDatabase.sql
+call npm init -y
+call npm install pg
+call node index.js
+call pg_ctl -D Database stop

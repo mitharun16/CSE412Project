@@ -4,7 +4,7 @@
 -- Table structure for table races
 --
 
-
+SET client_encoding TO 'UTF8';
 
 DROP TABLE IF EXISTS tracks CASCADE;
 CREATE TABLE tracks (
