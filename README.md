@@ -3,14 +3,18 @@
 ## Instructions for Running the program
 
 > **Warning**
-> Make sure you install [PostgreSQL] (https://www.postgresql.org/download/)
+>
+> Make sure you install PostgreSQL
+> Download Link : https://www.postgresql.org/download/
 
 > **Warning**
-> Make sure you install [Node.js] (https://nodejs.org/en/download/) 
-
+>
+> Make sure you install Node.js 
+> Download Link : https://nodejs.org/en/download/
 
 ### MacOS:
 > **Note**
+>
 > Make sure to add the PostgreSQL to PATH. This will ensure the Terminal will have access to PostgreSQL commands
     chmod +x macos.command 
     ./macos.command
