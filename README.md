@@ -2,9 +2,11 @@
 
 ## Instructions for Running the program
 
+> **Warning**
+> This is a warning
+
 
 ### MacOS:
-    :warning:
     chmod +x macos.command 
     ./macos.command
 
