@@ -24,7 +24,7 @@
 ### Windows:
 > **Note**
 >
-> Make sure to add the PostgreSQL to Environment PATHT. This will ensure the Command Prompt will have access to PostgreSQL commands
+> Make sure to add the PostgreSQL to Environment PATH. This will ensure the Command Prompt will have access to PostgreSQL commands
  * Open cmd prompt
  * Navigate to the directory
  * Type windows.bat
