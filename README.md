@@ -1,4 +1,4 @@
-# CSE412Project
+# CSE 412 Project
 
 ## Instructions for Running the program
 
