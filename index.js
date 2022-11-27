@@ -10,18 +10,18 @@ const client = new Client(
 )
 
 client.connect();
-client.query('Select * from drivers', (err, result) => {
-    if(!err)
-    {
-        console.log(result.rows);
-    }
-    else
-    {
-        console.log(err.message);
-    }
-    client.end;
+// client.query('Select * from drivers', (err, result) => {
+//     if(!err)
+//     {
+//         console.log(result.rows);
+//     }
+//     else
+//     {
+//         console.log(err.message);
+//     }
+//     client.end;
 
-})
+// })
 
 var http = require('http');
 var fs = require('fs');

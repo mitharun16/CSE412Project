@@ -5,5 +5,6 @@ createuser --superuser postgres
 psql -d postgres -a -f CreateDatabase.sql
 npm init -y
 npm install pg
+open http://localhost:3000/home.html
 node index.js
 pg_ctl -D Database stop
