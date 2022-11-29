@@ -42,4 +42,9 @@ http.createServer(function(req, res){
    
 }).listen(3000);
 
+function intraRaceReset(){
+    var x=document.getElementById("driverselect").value;
+      alert(x);
+}
+
 console.log('it works');
