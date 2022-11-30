@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="index.js"></script>
+        <script src="client.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
           body {
@@ -150,9 +150,10 @@
       <!-- <input type="button" style="float:left; font-weight: bold" value="Submit" onClick="javascript:standingsReset()"> -->
 
       <div class="submitButton">
-        <input class="button-17" role="button" value="Submit" onClick="intraRaceReset()"></input>
+        <input class="button-17" role="button" value="Submit" onClick="getData()"></input>
       </div>
-      
+      <div class="boxes" id="result">
+      </div>
 
       <style>
           .submitButton {
