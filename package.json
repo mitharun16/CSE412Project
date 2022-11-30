@@ -1,0 +1,24 @@
+{
+  "name": "cse412project",
+  "version": "1.0.0",
+  "description": "> **Warning**\r >\r > Make sure you install PostgreSQL\r > Download Link : https://www.postgresql.org/download/",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitharun16/CSE412Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitharun16/CSE412Project/issues"
+  },
+  "homepage": "https://github.com/mitharun16/CSE412Project#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
