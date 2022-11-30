@@ -3,15 +3,17 @@
     <head>
         <script src="client.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
         <style>
-          body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-          }
+          body,h1 {font-family: "Raleway", sans-serif}
+          body, html {height: 100%}
           
           .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: black;
           }
           
           .topnav a {
@@ -27,10 +29,10 @@
             background-color: #ddd;
             color: black;
           }
-          
+      
           .topnav a.active {
-            background-color: #00eece;
-            color: black;
+            background-color: rgb(174, 0, 0);
+            color: white;
           }
         </style>
         </head>
@@ -150,9 +152,13 @@
       <!-- <input type="button" style="float:left; font-weight: bold" value="Submit" onClick="javascript:standingsReset()"> -->
 
       <div class="submitButton">
+<<<<<<< Updated upstream
         <input class="button-17" role="button" value="Submit" onClick="getData()"></input>
       </div>
       <div class="boxes" id="result">
+=======
+        <input class="button-17" type="button" value="Submit" onClick="intraRaceReset()"></input>
+>>>>>>> Stashed changes
       </div>
 
       <style>
@@ -182,7 +188,8 @@
             line-height: normal;
             max-width: 100%;
             overflow: visible;
-            padding: 2px 24px;
+            padding-left: 85px;
+            padding-right: 85px;
             position: fixed;
             text-align: center;
             text-transform: none;
@@ -196,8 +203,8 @@
           }
 
           .button-17:hover {
-            background: #f86868;
-            color: black;
+            background: rgb(174, 0, 0);
+            color: white;
           }
 
           .button-17:active {

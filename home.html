@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< Updated upstream
     <head>
         <script src="client.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,40 +9,83 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
           }
+=======
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <style>
+      body,h1 {font-family: "Raleway", sans-serif}
+      body, html {height: 100%}
+      .bkgrdImage {
+        background-image: url('f1Background.jpg');
+        min-height: 100%;
+        background-position: center;
+        background-size: auto;
+
+      }
+      
+      .w3-display-middle {
+        background-color: black;
+        padding-right: 70px;
+        padding-left: 70px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-radius: 50px;
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: black;
+      }
+>>>>>>> Stashed changes
           
-          .topnav {
-            overflow: hidden;
-            background-color: #333;
-          }
-          
-          .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-          }
-          
-          .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-          
-          .topnav a.active {
-            background-color: #00eece;
-            color: black;
-          }
-        </style>
-        </head>
-    <body>
-        <div class="topnav">
-            <a class="active" href="home.html">Home</a>
-            <a href="races.html">Race Results</a>
-            <a href="standings.html">Standings</a>
-            <a href="laptime.html">Lap Times</a>
-          </div> 
-        <h1 style="font-size: 26px; padding-inline-start: 10px; padding-inline-end: 10px; "><b>Home</b></h1>
-        <p style="padding-inline-start: 20px; padding-inline-end: 20px;">This is a site that creates queries about F1 based on user input and returns data from a database for the user. Use the navbar above to navigate to specific queries you want to make.</p>
-    </body>
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      .topnav a.active {
+        background-color: rgb(174, 0, 0);
+        color: white;
+      }
+
+
+    </style>
+  </head>
+  <body style="background-color: black;">
+    
+    <div class="topnav">
+      <a class="active" href="home.html">Home</a>
+      <a href="races.html">Race Results</a>
+      <a href="standings.html">Standings</a>
+      <a href="laptime.html">Lap Times</a>
+    </div> 
+ 
+    <div class="bkgrdImage">
+
+        <div class="w3-display-middle">
+          <h1 class="w3-jumbo w3-animate-top" style="color: rgb(174, 0, 0)">F1 Data</h1>
+          <hr class="w3-border-grey" style="margin:auto;width:40%; ">
+          <p class="w3-large w3-center" style="color: white;">Query Fromula 1 Data</p>
+        </div>
+        
+    </div>
+
+  </body>
+  
+  
+
 </html>
