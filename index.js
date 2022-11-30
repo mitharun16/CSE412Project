@@ -16,6 +16,17 @@ app.get("/drivers", async(req, res) => {
     }
 }) 
 
+// get all drivers with certain team
+app.get("/drivers/:name", async(req, res) => {
+    try {
+        const {name} = req.params;
+        const drivers = await pool.query("SELECT * FROM drivers WHERE driverRef = $1", [name]); 
+        res.json(drivers.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+}) 
+
 
 // client.query('Select * from drivers', (err, result) => {
 //     if(!err)

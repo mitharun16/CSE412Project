@@ -16,6 +16,7 @@ http.createServer(function(req, res){
     });
    
 }).listen(3000);
+// open in http://localhost:3000/home.html
 
 
 async function submitRaceResults()
@@ -31,11 +32,34 @@ async function submitRaceResults()
     var circuits = document.queryForm.circuits.value;
     var status = document.queryForm.status.value;
 
-    theResponse = await fetch("http://localhost:4000/drivers")
+    theResponse = await fetch("http://localhost:4000/drivers/" + drivers )
     var jsonData = await theResponse.json();
 
-    alert( "look at console" )
+    alert( drivers )
     console.log( jsonData )
+
+
+
+    var toAdd = "";
+
+    jsonData.forEach(query => {
+        let result =`   <div>
+                            <p>Date of Birth: ${query.dob}</p>
+                            <p>URL: ${query.url}</p>
+                        </div>`
+  
+        toAdd += result; 
+    });
+
+    if( toAdd == "" )
+    {
+        toAdd = `<p>No Results.</p>`
+    } else {
+        let resultDiv = document.getElementById("queryResult");
+        resultDiv.innerHTML = toAdd;
+    }
+
+
 }
 
 function onChangeSeason() 
