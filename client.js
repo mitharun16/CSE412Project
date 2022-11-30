@@ -1,4 +1,24 @@
-function submitRaceResults()
+var http = require('http');
+var fs = require('fs');
+var url=require('url');
+
+http.createServer(function(req, res){
+    var q =url.parse(req.url,true);
+    var filename="."+q.pathname;
+    fs.readFile(filename,function(err,data){
+        if(err){
+            res.writeHead(404, {'Content-Type': 'text/html'});
+            return res.end("Page not found");
+        }
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        return res.end();
+    });
+   
+}).listen(3000);
+
+
+async function submitRaceResults()
 {
     var type = "results"; //document.queryForm.type.value;
     var seasonIndex = document.queryForm.seasons.selectedIndex;
@@ -11,8 +31,11 @@ function submitRaceResults()
     var circuits = document.queryForm.circuits.value;
     var status = document.queryForm.status.value;
 
+    theResponse = await fetch("http://localhost:4000/drivers")
+    var jsonData = await theResponse.json();
 
-    alert( round )
+    alert( "look at console" )
+    console.log( jsonData )
 }
 
 function onChangeSeason() 
