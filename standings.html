@@ -40,24 +40,66 @@
             <a href="races.html">Race Results</a>
             <a class="active" href="standings.html">Standings</a>
             <a href="laptime.html">Lap Times</a>
-          </div> 
-        <p style="font-size: 26px;text-align:center;"><b>Standings Query</b></p>
+        </div> 
+
+        <div class="titleHeader">
+          <h1>Standings Query</h1>
+        </div>
+
+        <style>
+          .titleHeader h1 {
+            padding-top: 15px;
+            text-align: center;
+            font-size:30px; 
+            font-weight:300; 
+            color:#222; 
+            letter-spacing:1px;
+            text-transform: uppercase;
+
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-template-rows: 27px 0;
+            grid-gap: 20px;
+            align-items: center;
+          }
+
+          .titleHeader h1:after,.titleHeader h1:before {
+            content: " ";
+            display: block;
+            border-bottom: 1px solid #c50000;
+            border-top: 1px solid #c50000;
+            height: 5px;
+            background-color:#f8f8f8;
+          }
+      </style>
+
         <form name="queryForm">
-        <table style="margin-left:auto;margin-right:auto; border-spacing: 20px">
-    <td>Required results type:</td>
-    <td colspan="3">
-      <select name="type" style="width: 190px" onChange="javascript:setStandingsDefaults()">
-        <option value="driverStandings" selected="selected">Driver Standings</option>
-        <option value="constructorStandings">Constructor Standings</option>
-        <option value="drivers">Driver Information</option>
-        <option value="constructors">Constructor Information</option>
-        <option value="seasons">Season List</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>Season:</td>
-    <td>
+        <table>
+          <style>
+            table{
+              margin-left: auto;
+              margin-right: auto; 
+              table-layout: auto;
+              border-collapse: separate;
+              border: 3px dotted #c50000;
+              border-spacing: 20px;
+            }
+          </style>
+
+          <td>Results type:</td>
+          <td colspan="3">
+            <select name="type" style="width: 190px" onChange="javascript:setStandingsDefaults()">
+              <option value="driverStandings" selected="selected">Driver Standings</option>
+              <option value="constructorStandings">Constructor Standings</option>
+              <option value="drivers">Driver Information</option>
+              <option value="constructors">Constructor Information</option>
+              <option value="seasons">Season List</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Season:</td>
+          <td>
       <select name="seasons" style="width: 70px" onChange="javascript:onChangeStandingsSeason()">
         <option value="0" selected="selected">All</option>
         <option value="current">Current</option>
@@ -102,10 +144,92 @@
                 <option value="adams">Adams</option>        <option value="afm">AFM</option>        <option value="ags">AGS</option>        <option value="alfa">Alfa Romeo</option>        <option value="alphatauri">AlphaTauri</option>        <option value="alpine">Alpine F1 Team</option>        <option value="alta">Alta</option>        <option value="amon">Amon</option>        <option value="moda">Andrea Moda</option>        <option value="apollon">Apollon</option>        <option value="arrows">Arrows</option>        <option value="arzani-volpini">Arzani-Volpini</option>        <option value="butterworth">Aston Butterworth</option>        <option value="aston_martin">Aston Martin</option>        <option value="ats">ATS</option>        <option value="bar">BAR</option>        <option value="behra-porsche">Behra-Porsche</option>        <option value="bellasi">Bellasi</option>        <option value="benetton">Benetton</option>        <option value="bmw">BMW</option>        <option value="bmw_sauber">BMW Sauber</option>        <option value="boro">Boro</option>        <option value="brabham">Brabham</option>        <option value="brabham-alfa_romeo">Brabham-Alfa Romeo</option>        <option value="brabham-brm">Brabham-BRM</option>        <option value="brabham-climax">Brabham-Climax</option>        <option value="brabham-ford">Brabham-Ford</option>        <option value="brabham-repco">Brabham-Repco</option>        <option value="brawn">Brawn</option>        <option value="brm">BRM</option>        <option value="brm-ford">BRM-Ford</option>        <option value="bromme">Bromme</option>        <option value="brp">BRP</option>        <option value="bugatti">Bugatti</option>        <option value="caterham">Caterham</option>        <option value="vhristensen">Christensen</option>        <option value="cisitalia">Cisitalia</option>        <option value="coloni">Coloni</option>        <option value="connaught">Connaught</option>        <option value="connew">Connew</option>        <option value="cooper">Cooper</option>        <option value="cooper-alfa_romeo">Cooper-Alfa Romeo</option>        <option value="cooper-ats">Cooper-ATS</option>        <option value="cooper-borgward">Cooper-Borgward</option>        <option value="cooper-brm">Cooper-BRM</option>        <option value="cooper-castellotti">Cooper-Castellotti</option>        <option value="cooper-climax">Cooper-Climax</option>        <option value="cooper-ferrari">Cooper-Ferrari</option>        <option value="cooper-ford">Cooper-Ford</option>        <option value="cooper-maserati">Cooper-Maserati</option>        <option value="cooper-osca">Cooper-OSCA</option>        <option value="dallara">Dallara</option>        <option value="tomaso">De Tomaso</option>        <option value="de_tomaso-alfa_romeo">De Tomaso-Alfa Romeo</option>        <option value="de_tomaso-ferrari">De Tomaso-Ferrari</option>        <option value="de_tomaso-osca">De Tomaso-Osca</option>        <option value="deidt">Deidt</option>        <option value="del_roy">Del Roy</option>        <option value="derrington">Derrington</option>        <option value="dunn">Dunn</option>        <option value="eagle">Eagle</option>        <option value="eagle-climax">Eagle-Climax</option>        <option value="eagle-weslake">Eagle-Weslake</option>        <option value="elder">Elder</option>        <option value="hill">Embassy Hill</option>        <option value="emeryson">Emeryson</option>        <option value="emw">EMW</option>        <option value="enb">ENB</option>        <option value="ensign">Ensign</option>        <option value="epperly">Epperly</option>        <option value="era">ERA</option>        <option value="eurobrun">Euro Brun</option>        <option value="ewing">Ewing</option>        <option value="ferguson">Ferguson</option>        <option value="ferrari">Ferrari</option>        <option value="fittipaldi">Fittipaldi</option>        <option value="fondmetal">Fondmetal</option>        <option value="footwork">Footwork</option>        <option value="force_india">Force India</option>        <option value="forti">Forti</option>        <option value="frazer_nash">Frazer Nash</option>        <option value="fry">Fry</option>        <option value="gilby">Gilby</option>        <option value="gordini">Gordini</option>        <option value="haas">Haas F1 Team</option>        <option value="hall">Hall</option>        <option value="hesketh">Hesketh</option>        <option value="honda">Honda</option>        <option value="hrt">HRT</option>        <option value="hwm">HWM</option>        <option value="iso_marlboro">Iso Marlboro</option>        <option value="jaguar">Jaguar</option>        <option value="jbw">JBW</option>        <option value="jordan">Jordan</option>        <option value="kauhsen">Kauhsen</option>        <option value="klenk">Klenk</option>        <option value="kojima">Kojima</option>        <option value="kurtis_kraft">Kurtis Kraft</option>        <option value="kuzma">Kuzma</option>        <option value="lambo">Lambo</option>        <option value="lancia">Lancia</option>        <option value="langley">Langley</option>        <option value="larrousse">Larrousse</option>        <option value="lds">LDS</option>        <option value="lds-alfa_romeo">LDS-Alfa Romeo</option>        <option value="lds-climax">LDS-Climax</option>        <option value="lec">LEC</option>        <option value="lesovsky">Lesovsky</option>        <option value="leyton">Leyton House</option>        <option value="life">Life</option>        <option value="ligier">Ligier</option>        <option value="lola">Lola</option>        <option value="lotus_racing">Lotus</option>        <option value="lotus_f1">Lotus F1</option>        <option value="lotus-borgward">Lotus-Borgward</option>        <option value="lotus-brm">Lotus-BRM</option>        <option value="lotus-climax">Lotus-Climax</option>        <option value="lotus-ford">Lotus-Ford</option>        <option value="lotus-maserati">Lotus-Maserati</option>        <option value="lotus-pw">Lotus-Pratt &amp; Whitney</option>        <option value="lyncar">Lyncar</option>        <option value="maki">Maki</option>        <option value="manor">Manor Marussia</option>        <option value="march">March</option>        <option value="march-alfa_romeo">March-Alfa Romeo</option>        <option value="march-ford">March-Ford</option>        <option value="marchese">Marchese</option>        <option value="martini">Martini</option>        <option value="marussia">Marussia</option>        <option value="maserati">Maserati</option>        <option value="matra">Matra</option>        <option value="matra-ford">Matra-Ford</option>        <option value="mbm">MBM</option>        <option value="mcguire">McGuire</option>        <option value="mclaren">McLaren</option>        <option value="mclaren-alfa_romeo">McLaren-Alfa Romeo</option>        <option value="mclaren-brm">McLaren-BRM</option>        <option value="mclaren-ford">McLaren-Ford</option>        <option value="mclaren-seren">McLaren-Serenissima</option>        <option value="mercedes">Mercedes</option>        <option value="merzario">Merzario</option>        <option value="meskowski">Meskowski</option>        <option value="mf1">MF1</option>        <option value="milano">Milano</option>        <option value="minardi">Minardi</option>        <option value="moore">Moore</option>        <option value="nichels">Nichels</option>        <option value="olson">Olson</option>        <option value="onyx">Onyx</option>        <option value="osca">OSCA</option>        <option value="osella">Osella</option>        <option value="pacific">Pacific</option>        <option value="pankratz">Pankratz</option>        <option value="parnelli">Parnelli</option>        <option value="pawl">Pawl</option>        <option value="penske">Penske</option>        <option value="phillips">Phillips</option>        <option value="politoys">Politoys</option>        <option value="porsche">Porsche</option>        <option value="prost">Prost</option>        <option value="protos">Protos</option>        <option value="racing_point">Racing Point</option>        <option value="rae">Rae</option>        <option value="ram">RAM</option>        <option value="re">RE</option>        <option value="rebaque">Rebaque</option>        <option value="red_bull">Red Bull</option>        <option value="renault">Renault</option>        <option value="rial">Rial</option>        <option value="sauber">Sauber</option>        <option value="scarab">Scarab</option>        <option value="schroeder">Schroeder</option>        <option value="scirocco">Scirocco</option>        <option value="shadow">Shadow</option>        <option value="shadow-ford">Shadow-Ford</option>        <option value="shadow-matra">Shadow-Matra</option>        <option value="shannon">Shannon</option>        <option value="sherman">Sherman</option>        <option value="simca">Simca</option>        <option value="simtek">Simtek</option>        <option value="snowberger">Snowberger</option>        <option value="spirit">Spirit</option>        <option value="spyker">Spyker</option>        <option value="spyker_mf1">Spyker MF1</option>        <option value="stebro">Stebro</option>        <option value="stevens">Stevens</option>        <option value="stewart">Stewart</option>        <option value="super_aguri">Super Aguri</option>        <option value="surtees">Surtees</option>        <option value="sutton">Sutton</option>        <option value="lago">Talbot-Lago</option>        <option value="team_lotus">Team Lotus</option>        <option value="tec-mec">Tec-Mec</option>        <option value="tecno">Tecno</option>        <option value="theodore">Theodore</option>        <option value="token">Token</option>        <option value="toleman">Toleman</option>        <option value="toro_rosso">Toro Rosso</option>        <option value="toyota">Toyota</option>        <option value="trevis">Trevis</option>        <option value="trojan">Trojan</option>        <option value="turner">Turner</option>        <option value="tyrrell">Tyrrell</option>        <option value="vanwall">Vanwall</option>        <option value="veritas">Veritas</option>        <option value="virgin">Virgin</option>        <option value="watson">Watson</option>        <option value="wetteroth">Wetteroth</option>        <option value="williams">Williams</option>        <option value="wolf">Wolf</option>        <option value="zakspeed">Zakspeed</option>      </select>
    </td> 
   </tr>
-  <tr style="height: 40px">
+  <tr style="height: 0px">
     <td></td>
     <td>
-      <input type="button" style="float:left; font-weight: bold" value="Submit" onClick="javascript:standingsReset()">
+      <!-- <input type="button" style="float:left; font-weight: bold" value="Submit" onClick="javascript:standingsReset()"> -->
+
+      <div class="submitButton">
+        <input class="button-17" role="button" value="Submit" onClick="intraRaceReset()"></input>
+      </div>
+      
+
+      <style>
+          .submitButton {
+            padding-top: 30px;
+            padding-right: 220px;
+          }
+
+          .button-17 {
+            align-items: center;
+            appearance: none;
+            background-color: #fff;
+            border-radius: 24px;
+            border-style: none;
+            box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+            box-sizing: border-box;
+            color: #3c4043;
+            cursor: pointer;
+            display: inline-flex;
+            fill: currentcolor;
+            font-family: "Google Sans",Roboto,Arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            height: 48px;
+            justify-content: center;
+            letter-spacing: .25px;
+            line-height: normal;
+            max-width: 100%;
+            overflow: visible;
+            padding: 2px 24px;
+            position: fixed;
+            text-align: center;
+            text-transform: none;
+            transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: auto;
+            will-change: transform,opacity;
+            z-index: 0;
+          }
+
+          .button-17:hover {
+            background: #f86868;
+            color: black;
+          }
+
+          .button-17:active {
+            box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+            outline: none;
+          }
+
+          .button-17:focus {
+            outline: none;
+            border: 2px solid #4285f4;
+          }
+
+          .button-17:not(:disabled) {
+            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+          }
+
+          .button-17:not(:disabled):hover {
+            box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+          }
+
+          .button-17:not(:disabled):focus {
+            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+          }
+
+          .button-17:not(:disabled):active {
+            box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+          }
+
+          .button-17:disabled {
+            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+          }
+      </style>
+
     </td>
   </tr>
 </table>
