@@ -42,7 +42,29 @@ app.get("/drivers/:name", async(req, res) => {
 // })
 
 app.listen(4000, () => {
-    console.log("server has started on 4000")
+    console.log("Server has started on 4000")
 })
+
+var http = require('http');
+var fs = require('fs');
+var url=require('url');
+
+
+http.createServer(function(req, res){
+    var q =url.parse(req.url,true);
+    var filename="."+q.pathname;
+    fs.readFile(filename,function(err,data){
+        if(err){
+            res.writeHead(404, {'Content-Type': 'text/html'});
+            return res.end("Page not found");
+        }
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        return res.end();
+    });
+    console.log('Website running on 3000');
+   
+}).listen(3000);
+// open in http://localhost:3000/home.html
 
 console.log('it works');
