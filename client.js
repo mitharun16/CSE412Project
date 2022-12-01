@@ -14,20 +14,38 @@ async function submitRaceResults()
     theResponse = await fetch("http://localhost:4000/drivers/" + drivers )
     var jsonData = await theResponse.json();
 
-    alert( drivers )
+    // alert( constructors )
     console.log( jsonData )
 
 
 
     var toAdd = "";
+    var raceCount = 1
+
+    // toAdd = `<div>
+    //          <h3>Driver: ${jsonData[0].query.forename + query.surname}</h3>
+    //          <h3>Nationality: ${jsonData[0].query.nationality}</h3>
+    //          </div>`
 
     jsonData.forEach(query => {
         let result =`   <div>
-                            <p>Date of Birth: ${query.dob}</p>
-                            <p>URL: ${query.url}</p>
+                            <h3><b>Race Result ${raceCount}</b></h3>
+                            <p>Driver: ${query.forename + " " + query.surname}</p>
+                            <p>Nationality: ${query.nationality}</p>
+
+                            <p>Number: ${query.number}</p>
+                            <p>Grid: ${query.grid}</p>
+                            <p>Position: ${query.position}</p>
+                            <p>Time: ${query.time}</p>
+                            <p>Laps: ${query.laps}</p>
+                            <p>Fastest Lap: ${query.fastestlap}</p>
+                            <p>Fastest Lap Time: ${query.fastestlaptime}</p>
+                            <p>Laps: ${query.laps}</p>
+                            <p>Laps: ${query.laps}</p>
                         </div>`
   
         toAdd += result; 
+        raceCount++
     });
 
     if( toAdd == "" )
