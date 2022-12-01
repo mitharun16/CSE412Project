@@ -17,11 +17,11 @@ app.get("/drivers", async(req, res) => {
 }) 
 
 // get drivers with certain name and team
-app.get("/drivers/:name/:sponsor/:year/:round/:position", async(req, res) => {
+app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res) => {
     try {
-        const {name, sponsor,year,round,position} = req.params;
+        const {name, sponsor,year,round,position,track} = req.params;
 
-        var sql='SELECT grid, position, results.number, laps, results.time, fastestlap, fastestlaptime, forename, surname, drivers.nationality FROM results INNER JOIN drivers ON results.driverid = drivers.driverid INNER JOIN sponsors ON results.sponsorid = sponsors.sponsorid INNER JOIN races ON results.raceid = races.raceid WHERE sponsors.sponsorref=sponsors.sponsorref';
+        var sql='SELECT races.name,grid, position, results.number, laps, results.time, fastestlap, fastestlaptime, forename, surname, drivers.nationality FROM results INNER JOIN drivers ON results.driverid = drivers.driverid INNER JOIN sponsors ON results.sponsorid = sponsors.sponsorid INNER JOIN races ON results.raceid = races.raceid INNER JOIN tracks ON races.circuitid=tracks.circuitId WHERE sponsors.sponsorref=sponsors.sponsorref';
 
         if(name!='0'){
             sql+=' AND drivers.driverref =\''+name+'\'';
@@ -41,6 +41,9 @@ app.get("/drivers/:name/:sponsor/:year/:round/:position", async(req, res) => {
             }else{
             sql+=' AND position='+position;
             }
+        }
+        if(track!=0){
+            sql+=' AND circuitref=\''+track+'\'';
         }
 
         console.log(sql);

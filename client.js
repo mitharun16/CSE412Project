@@ -1,15 +1,13 @@
 async function submitRaceResults()
 {
-    var type = "results"; //document.queryForm.type.value;
     var seasonIndex = document.queryForm.seasons.value;
     var round = document.queryForm.round.value;
     var drivers = document.queryForm.drivers.value;
     var constructors = document.queryForm.constructors.value;
     var position = document.queryForm.position.value;
     var circuits = document.queryForm.circuits.value;
-    var status = document.queryForm.status.value;
 
-    theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors+"/"+seasonIndex+"/"+round+"/"+position)
+    theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors+"/"+seasonIndex+"/"+round+"/"+position+"/"+circuits)
     var jsonData = await theResponse.json();
 
     // alert( constructors )
@@ -25,6 +23,7 @@ async function submitRaceResults()
     jsonData.forEach(query => {
         let result =`   <div>
                             <h3><b>Race Result ${raceCount}</b></h3>
+                            <p>Race Name: ${query.name}<p>
                             <p>Driver: ${query.forename + " " + query.surname}</p>
                             <p>Nationality: ${query.nationality}</p>
                             <p>Number: ${query.number}</p>
