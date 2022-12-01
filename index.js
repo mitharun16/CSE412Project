@@ -67,7 +67,7 @@ http.createServer(function(req, res){
     });
    
 }).listen(3000);
-console.log("Webpage is open on 4000")
+console.log("Webpage is open on 3000")
 console.log("Everything is working.")
 // open in http://localhost:3000/home.html
 console.log('Webpage has turned on http://localhost:3000/home.html');
