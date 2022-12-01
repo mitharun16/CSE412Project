@@ -10,15 +10,8 @@ async function submitRaceResults()
     theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors+"/"+seasonIndex+"/"+round+"/"+position+"/"+circuits)
     var jsonData = await theResponse.json();
 
-    // alert( constructors )
-
     var toAdd = "";
     var raceCount = 1
-
-    // toAdd = `<div>
-    //          <h3>Driver: ${jsonData[0].query.forename + query.surname}</h3>
-    //          <h3>Nationality: ${jsonData[0].query.nationality}</h3>
-    //          </div>`
 
     jsonData.forEach(query => {
         let result =`   <div class="singleResult">
@@ -47,8 +40,6 @@ async function submitRaceResults()
     } 
     let resultDiv = document.getElementById("queryResult");
     resultDiv.innerHTML = toAdd;
-
-
 }
 
 

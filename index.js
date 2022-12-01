@@ -6,16 +6,6 @@ const pool = require("./db")
 app.use(cors());
 app.use(express.json());
 
-// get all drivers
-app.get("/drivers", async(req, res) => {
-    try {
-        const drivers = await pool.query("SELECT * FROM drivers"); 
-        res.json(drivers.rows);
-    } catch (err) {
-        console.error(err.message);
-    }
-}) 
-
 // get drivers with certain name, team, year, round, and position, and race name
 app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res) => {
     try {
@@ -77,7 +67,4 @@ http.createServer(function(req, res){
     });
    
 }).listen(3000);
-console.log('Website running on 3000');
 // open in http://localhost:3000/home.html
-
-console.log('Everyhing is working');
