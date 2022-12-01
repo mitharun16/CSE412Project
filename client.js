@@ -5,19 +5,14 @@ async function submitRaceResults()
     var round = document.queryForm.round.value;
     var drivers = document.queryForm.drivers.value;
     var constructors = document.queryForm.constructors.value;
-    var grid = 0 //document.queryForm.grid.value;
     var position = document.queryForm.position.value;
-    var fastest = 0 //document.queryForm.fastest.value;  
     var circuits = document.queryForm.circuits.value;
     var status = document.queryForm.status.value;
 
-    theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors)
+    theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors+"/"+seasonIndex+"/"+round+"/"+position)
     var jsonData = await theResponse.json();
 
     // alert( constructors )
-    console.log( jsonData )
-
-
 
     var toAdd = "";
     var raceCount = 1
@@ -32,29 +27,25 @@ async function submitRaceResults()
                             <h3><b>Race Result ${raceCount}</b></h3>
                             <p>Driver: ${query.forename + " " + query.surname}</p>
                             <p>Nationality: ${query.nationality}</p>
-
                             <p>Number: ${query.number}</p>
                             <p>Grid: ${query.grid}</p>
-                            <p>Position: ${query.position}</p>
+                            <p>Finishing Position: ${query.position}</p>
                             <p>Time: ${query.time}</p>
                             <p>Laps: ${query.laps}</p>
                             <p>Fastest Lap: ${query.fastestlap}</p>
                             <p>Fastest Lap Time: ${query.fastestlaptime}</p>
-                            <p>Laps: ${query.laps}</p>
-                            <p>Laps: ${query.laps}</p>
                         </div>`
   
         toAdd += result; 
         raceCount++
     });
 
-    if( toAdd == "" )
+    if( toAdd=="" )
     {
         toAdd = `<p>No Results.</p>`
-    } else {
+    } 
         let resultDiv = document.getElementById("queryResult");
         resultDiv.innerHTML = toAdd;
-    }
 
 
 }

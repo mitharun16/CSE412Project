@@ -16,30 +16,36 @@ app.get("/drivers", async(req, res) => {
     }
 }) 
 
-// get all race results with certain name
-app.get("/drivers/:name", async(req, res) => {
-    try {
-        const {name} = req.params;
-        console.log(name)
-        const drivers = await pool.query(
-            'SELECT grid, position, results.number, laps, time, fastestlap, fastestlaptime, forename, surname, nationality FROM results INNER JOIN drivers ON results.driverid = drivers.driverid WHERE driverRef = $1', [name]); 
-        res.json(drivers.rows);
-    } catch (err) {
-        console.error(err.message);
-    }
-}) 
-
 // get drivers with certain name and team
-app.get("/drivers/:name/:sponsor", async(req, res) => {
+app.get("/drivers/:name/:sponsor/:year/:round/:position", async(req, res) => {
     try {
-        const {name, sponsor} = req.params;
+        const {name, sponsor,year,round,position} = req.params;
 
-        console.log(req.params)
-        console.log(name)
-        console.log(sponsor)
+        var sql='SELECT grid, position, results.number, laps, results.time, fastestlap, fastestlaptime, forename, surname, drivers.nationality FROM results INNER JOIN drivers ON results.driverid = drivers.driverid INNER JOIN sponsors ON results.sponsorid = sponsors.sponsorid INNER JOIN races ON results.raceid = races.raceid WHERE sponsors.sponsorref=sponsors.sponsorref';
 
+        if(name!='0'){
+            sql+=' AND drivers.driverref =\''+name+'\'';
+        }
+        if(sponsor!='0'){
+            sql+=' AND sponsors.sponsorref =\''+sponsor+'\'';
+        }
+        if(year!=0){
+            sql+=' AND year='+year;
+        }
+        if(round!=0){
+            sql+=' AND round='+round;
+        }
+        if(position!=0){
+            if(position=="null"){
+                sql+="AND position is null"
+            }else{
+            sql+=' AND position='+position;
+            }
+        }
+
+        console.log(sql);
         const drivers = await pool.query(
-            'SELECT grid, position, results.number, laps, time, fastestlap, fastestlaptime, forename, surname, drivers.nationality FROM results INNER JOIN drivers ON results.driverid = drivers.driverid INNER JOIN sponsors ON results.sponsorid = sponsors.sponsorid WHERE sponsors.sponsorref = $1 AND drivers.driverref = $2', [sponsor, name]); 
+            sql); 
         res.json(drivers.rows);
     } catch (err) {
         console.error(err.message);
