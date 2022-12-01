@@ -5,4 +5,5 @@ createuser --superuser postgres
 psql -d postgres -a -f CreateDatabase.sql
 npm init -y
 npm i express pg cors
+open http://localhost:3000/home.html
 node index.js
