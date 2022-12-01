@@ -55,20 +55,6 @@ app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res)
     }
 }) 
 
-
-// client.query('Select * from drivers', (err, result) => {
-//     if(!err)
-//     {
-//         console.log(result.rows);
-//     }
-//     else
-//     {
-//         console.log(err.message);
-//     }
-//     client.end;
-
-// })
-
 app.listen(4000, () => {
     console.log("Server has started on 4000")
 })
@@ -76,7 +62,6 @@ app.listen(4000, () => {
 var http = require('http');
 var fs = require('fs');
 var url=require('url');
-
 
 http.createServer(function(req, res){
     var q =url.parse(req.url,true);

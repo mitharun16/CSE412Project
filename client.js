@@ -80,8 +80,3 @@ function onChangeSeason()
       document.queryForm.round.disabled = false;
     }
   }
-
-function test()
-{
-    alert("sss")
-}
