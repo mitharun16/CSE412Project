@@ -35,8 +35,6 @@ app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res)
         if(track!=0){
             sql+=' AND circuitref=\''+track+'\'';
         }
-
-        console.log(sql);
         const drivers = await pool.query(
             sql); 
         res.json(drivers.rows);
