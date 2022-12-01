@@ -41,5 +41,3 @@ async function submitRaceResults()
     let resultDiv = document.getElementById("queryResult");
     resultDiv.innerHTML = toAdd;
 }
-
-
