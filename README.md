@@ -2,7 +2,7 @@
 ## by Esvarabala Kannan, Aashish Appakonam, Tharun Imayavaramban
 
 #### Link to Github Repo: https://github.com/mitharun16/CSE412Project
-#### Link to Youtube Video: 
+#### Link to Youtube Video: https://www.youtube.com/watch?v=GE2T3g8Kj7g
 ## Instructions for Running the program
 
 > **Warning**
