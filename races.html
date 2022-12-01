@@ -87,22 +87,6 @@
                 }
               </style>
 
-              <!-- <tr>
-                <td>Results type:</td>
-                <td colspan="3">
-                  <select name="type" style="width: 190px">
-                    <option value="circuits">Circuit Information</option>
-                    <option value="constructors">Constructor Information</option>
-                    <option value="drivers">Driver Information</option>
-                    <option value="qualifying">Qualifying Results</option>
-                    <option value="results" selected="selected">Race Results</option>
-                    <option value="races">Race Schedule</option>
-                    <option value="seasons">Season List</option>
-                    <option value="sprint">Sprint Results</option>
-                    <option value="status">Finishing Status</option>
-                  </select>
-                </td>
-              </tr> -->
               <tr>
                 <td>Teams:</td>
                 <td colspan="3">
@@ -145,15 +129,6 @@
                   </select>
                 </td>
               </tr>
-
-              <!-- <tr>
-                <td>Fastest Lap Rank:</td>
-                <td colspan="3">
-                  <select name="fastest" style="width: 50px">
-                    <option value="0" selected="selected">All</option>
-                            <option value="1">1</option>        <option value="2">2</option>        <option value="3">3</option>        <option value="4">4</option>        <option value="5">5</option>        <option value="6">6</option>        <option value="7">7</option>        <option value="8">8</option>        <option value="9">9</option>        <option value="10">10</option>        <option value="11">11</option>        <option value="12">12</option>        <option value="13">13</option>        <option value="14">14</option>        <option value="15">15</option>        <option value="16">16</option>        <option value="17">17</option>        <option value="18">18</option>        <option value="19">19</option>        <option value="20">20</option>        <option value="21">21</option>        <option value="22">22</option>        <option value="23">23</option>        <option value="24">24</option>      </select>
-                </td>
-              </tr> -->
 
               <tr>
                 <td>Circuit:</td>
@@ -258,8 +233,49 @@
               </table>
             </form>
 
-            <div class="boxes" id="queryResult">
+            <div class="results" id="queryResult">
 
             </div>
+
+            <style>
+              .results
+              {
+                padding-top: 50px;
+                text-align: center;
+                padding-inline-start: 150px;
+                padding-inline-end: 150px;                
+              }
+              .results h3
+              {
+                  padding-top: 20px;
+                  font-family: "Raleway", sans-serif;
+                  font-size: 30px;
+                  color: rgb(255, 148, 148);
+              }
+
+              .results p
+              {
+                color: white;
+              }
+
+              .singleResult
+              {
+                background-color: rgb(163, 0, 0);
+                border-radius: 100px;
+                padding-bottom: 20px;
+                padding-right: 200px;
+                padding-left: 200px;
+              }
+
+              .noResult
+              {
+                background-color: rgb(163, 0, 0);
+                border-radius: 50px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-right: 200px;
+                padding-left: 200px;
+              }
+            </style>
     </body>
 </html>

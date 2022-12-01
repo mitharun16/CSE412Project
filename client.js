@@ -21,11 +21,12 @@ async function submitRaceResults()
     //          </div>`
 
     jsonData.forEach(query => {
-        let result =`   <div>
-                            <h3><b>Race Result ${raceCount}</b></h3>
-                            <p>Race Name: ${query.name}<p>
+        let result =`   <div class="singleResult">
+                            <h3><b>Race Result ${raceCount}: ${query.name} </b></h3>
+                            <hr style="width:100%;text-align:center;">
                             <p>Driver: ${query.forename + " " + query.surname}</p>
                             <p>Nationality: ${query.nationality}</p>
+
                             <p>Number: ${query.number}</p>
                             <p>Grid: ${query.grid}</p>
                             <p>Finishing Position: ${query.position}</p>
@@ -41,42 +42,13 @@ async function submitRaceResults()
 
     if( toAdd=="" )
     {
-        toAdd = `<p>No Results.</p>`
+        toAdd = `<div class="noResult"> <p><b>No Results.</b></p> </div>`
+        alert( "No Results Found!" )
     } 
-        let resultDiv = document.getElementById("queryResult");
-        resultDiv.innerHTML = toAdd;
+    let resultDiv = document.getElementById("queryResult");
+    resultDiv.innerHTML = toAdd;
 
 
 }
 
-function onChangeSeason() 
-{
-    var maxRound = document.queryForm.seasons.value;
 
-    if( maxRound == "current" )
-    {
-        maxRound = document.queryForm.seasons.options[2].value;
-    }
-
-    var selected = document.queryForm.round.selectedIndex;
-
-    document.queryForm.round.options.length = 3;
-
-    if( maxRound == 0 ) 
-    {
-      document.queryForm.round.disabled = true;
-    } 
-    else 
-    {
-      if( selected > maxRound ) selected = maxRound;
-
-      for( var i=1; i <= maxRound; i++ ) 
-      {
-        option = new Option(i, i, false, false);
-        document.queryForm.round.options[i+2] = option;
-      }
-
-      document.queryForm.round.selectedIndex = selected;
-      document.queryForm.round.disabled = false;
-    }
-  }

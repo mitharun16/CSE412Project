@@ -16,7 +16,7 @@ app.get("/drivers", async(req, res) => {
     }
 }) 
 
-// get drivers with certain name and team
+// get drivers with certain name, team, year, round, and position, and race name
 app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res) => {
     try {
         const {name, sponsor,year,round,position,track} = req.params;
@@ -80,4 +80,4 @@ http.createServer(function(req, res){
 console.log('Website running on 3000');
 // open in http://localhost:3000/home.html
 
-console.log('it works');
+console.log('Everyhing is working');
