@@ -68,3 +68,4 @@ http.createServer(function(req, res){
    
 }).listen(3000);
 // open in http://localhost:3000/home.html
+console.log('Webpage has turned on http://localhost:3000/home.html');
