@@ -1,7 +1,7 @@
 async function submitRaceResults()
 {
     var type = "results"; //document.queryForm.type.value;
-    var seasonIndex = document.queryForm.seasons.selectedIndex;
+    var seasonIndex = document.queryForm.seasons.value;
     var round = document.queryForm.round.value;
     var drivers = document.queryForm.drivers.value;
     var constructors = document.queryForm.constructors.value;
@@ -11,7 +11,7 @@ async function submitRaceResults()
     var circuits = document.queryForm.circuits.value;
     var status = document.queryForm.status.value;
 
-    theResponse = await fetch("http://localhost:4000/drivers/" + drivers )
+    theResponse = await fetch("http://localhost:4000/drivers/" + drivers+"/"+constructors)
     var jsonData = await theResponse.json();
 
     // alert( constructors )
