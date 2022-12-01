@@ -27,7 +27,7 @@ app.get("/drivers/:name/:sponsor/:year/:round/:position/:track", async(req, res)
         }
         if(position!=0){
             if(position=="null"){
-                sql+="AND position is null"
+                sql+=' AND position is null'
             }else{
             sql+=' AND position='+position;
             }
